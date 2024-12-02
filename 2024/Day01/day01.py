@@ -15,10 +15,7 @@ l2.sort()
 
 sum1 = 0
 for li1, li2 in zip(l1,l2):
-    if li1 > li2:
-        sum1 += li1 - li2
-    else:
-        sum1 += li2 - li1
+    sum1 += abs(li1 - li2)
 
 print(f"Distance:  {sum1}")
 
