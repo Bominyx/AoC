@@ -12,26 +12,19 @@ with open("input.txt") as file:
 
 
 def is_safe(report):
-    increasing = False
-    ctr = 0
+    ctr1 = 0
+    ctr2 = 0
+    ctr3 = 0
     for i in range(len(report)-1):
         if report[i] > report[i+1]:
-            ctr+=1
-    increasing = ctr == len(report)-1
-
-    decreasing = False
-    ctr = 0
-    for i in range(len(report)-1):
+            ctr1+=1
         if report[i] < report[i+1]:
-            ctr+=1
-    decreasing = ctr == len(report)-1
-
-    safe_differences = False
-    ctr = 0
-    for i in range(len(report)-1):
+            ctr2+=1
         if abs(report[i] - report[i+1]) <= 3:
-            ctr+=1
-    safe_differences = ctr == len(report)-1
+            ctr3+=1
+    increasing = ctr1 == len(report)-1
+    decreasing = ctr2 == len(report)-1
+    safe_differences = ctr3 == len(report)-1
 
     return (increasing or decreasing) and safe_differences
 
