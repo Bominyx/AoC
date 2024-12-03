@@ -26,5 +26,5 @@ for instruction in instructions:
             number1, number2 = instruction[4:-1].split(',')
             result2 += int(number1) * int(number2)
 
-print(result1)
-print(result2)
+print(f"All Multiplications {result1}")
+print(f"Enabled Multiplications {result2}")
